@@ -25,13 +25,10 @@
     "eject": "react-scripts eject",
     "prettify": "prettier src/**/*.{js,jsx,json,css} --write"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged":{
-    "src/**/*.{js,jsx,json,css}":["prettier --single-quote --write", "git add"]
   },
   "eslintConfig": {
     "extends": "react-app"
