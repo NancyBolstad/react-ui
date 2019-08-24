@@ -24,6 +24,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged":{
+    "src/**/*.{js,jsx,json,css}":["prettier --single-quote --write", "git add"]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
