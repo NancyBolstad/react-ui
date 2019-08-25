@@ -1,5 +1,21 @@
-version: 2
+version: 2.1
 jobs:
+  init:
+    docker:
+      - image: circleci/node:latest
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run: yarn install
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+
   build:
     docker:
       - image: circleci/node:latest
@@ -9,4 +25,32 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn start
+      - attach_workspace:
+          at: .
+
+      - run: yarn build
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist
+
+      - store_artifacts:
+          path: dist
+
+      - store_artifacts:
+          path: .out
+
+workflows:
+  version: 2.1
+  main:
+    jobs:
+      - init:
+          name: init-master
+          context: PROD
+
+      - build:
+          name: build-master
+          requires:
+            - init-master
+          context: PROD
