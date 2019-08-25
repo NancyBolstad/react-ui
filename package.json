@@ -9,10 +9,10 @@
   "author": "Nancy Bolstad <litchacha@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/jest": "24.0.18",
+    "@types/jest": "^24.0.18",
     "@types/node": "12.7.2",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -52,6 +52,9 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^5.1.11",
+    "@types/styled-components": "^4.1.18",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.2.2",
     "eslint-config-airbnb": "^18.0.1",
