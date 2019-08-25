@@ -9,4 +9,4 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn build
+      - run: yarn start
